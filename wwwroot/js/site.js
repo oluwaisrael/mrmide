@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-expanded', String(!open));
     menu?.classList.toggle('is-open', !open);
   });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu?.classList.contains('is-open')) {
+      toggle?.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+      toggle?.focus();
+    }
+  });
   menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     toggle?.setAttribute('aria-expanded', 'false');
     menu.classList.remove('is-open');
