@@ -80,6 +80,19 @@ a { color: inherit; }
 .phone-mini img { width: 51%; height: 100%; display: block; object-fit: cover; object-position: center; }
 .phone-stat { padding: 15px; color: #ddffe4; font-size: 17px; }
 
+/* The feature section is intentionally asymmetric: one tall editorial card beside two compact cards. */
+@media (min-width: 761px) {
+  .feature-grid { grid-template-columns: 40% 60%; grid-template-rows: 235px 235px; }
+  .feature-card { min-height: 0; }
+  .feature-card:first-child { grid-row: 1 / span 2; display: block; }
+  .feature-card:first-child .feature-visual { height: 470px; }
+  .feature-card:first-child .feature-body { position: absolute; z-index: 3; top: 0; left: 0; width: 100%; padding: 18px; background: linear-gradient(180deg, #05100bd9, transparent); }
+  .feature-audio { display: block; }
+  .feature-audio .feature-visual { height: 235px; }
+  .feature-audio .feature-body { position: absolute; z-index: 3; bottom: 0; left: 0; width: 53%; padding: 15px; background: linear-gradient(90deg, #050806e8, transparent); }
+  .feature-data { grid-column: 2; min-height: 0; height: 235px; }
+}
+
 .membership { padding: 59px 0 67px; text-align: center; }
 .narrow { max-width: 936px; }
 .centered { margin-bottom: 11px; }
@@ -109,7 +122,41 @@ a { color: inherit; }
 .footer-mark { width: 76px; height: 76px; padding: 13px; border-radius: 13px; gap: 4px; }
 .footer-meta { display: flex; align-items: center; justify-content: space-between; min-height: 23px; padding: 0 8px; border-radius: 2px; background: #242624; color: #9da39e; font-size: 8px; }
 
-@media (max-width: 760px) {
+@media (min-width: 481px) and (max-width: 760px) {
+  .container { width: calc(100% - 50px); }
+  .hero { grid-template-columns: 1.02fr .98fr; min-height: 428px; gap: 8px; padding-top: 35px; }
+  .hero h1 { font-size: 38px; }
+  .hero .lede { font-size: 10px; max-width: 210px; }
+  .radar { height: 260px; }
+  .ring-outer { width: 230px; height: 230px; }
+  .ring-mid { width: 171px; height: 171px; }
+  .ring-inner { width: 112px; height: 112px; }
+  .ball { width: 74px; height: 74px; }
+  .metric-top { top: 27px; right: 40px; }
+  .metric-right { top: 125px; right: 0; }
+  .metric-bottom { bottom: 18px; left: 77px; }
+  .feature-grid { grid-template-columns: 40% 60%; grid-template-rows: 170px 170px; }
+  .feature-card { min-height: 0; }
+  .feature-card:first-child { grid-row: 1 / span 2; display: block; }
+  .feature-card:first-child .feature-visual { height: 340px; }
+  .feature-card:first-child .feature-body { position: absolute; z-index: 3; top: 0; left: 0; width: 100%; padding: 13px 11px; background: linear-gradient(180deg, #05100bd9, transparent); }
+  .feature-audio { display: block; }
+  .feature-audio .feature-visual { height: 170px; }
+  .feature-audio .feature-body { position: absolute; z-index: 3; bottom: 0; left: 0; width: 53%; padding: 11px; background: linear-gradient(90deg, #050806e8, transparent); }
+  .feature-data { grid-column: 2; min-height: 0; height: 170px; padding: 9px; }
+  .feature-data .phone-mini { width: 52%; height: 100%; }
+  .feature-data .feature-body { padding: 0 9px; }
+  .feature-body h3 { font-size: 14px; }
+  .feature-body p { font-size: 8px; }
+  .plans { gap: 10px; }
+  .plan { padding: 13px 10px; }
+  .faq-layout { gap: 20px; }
+  .faq h2 { font-size: 31px; }
+  .footer-wordmark { font-size: 57px; }
+  .footer-mark { width: 52px; height: 52px; padding: 8px; }
+}
+
+@media (max-width: 480px) {
   .container { width: min(100% - 32px, 430px); }
   .nav { height: 59px; }
   .menu-toggle { display: block; }
